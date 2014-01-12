@@ -1,0 +1,35 @@
+﻿@model TesteP3Image.Models.SubCategorias
+
+@{
+    ViewBag.Title = "Subcategoria - Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Subcategorias</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SubCategoriaId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubCategoriaId)
+    </div>
+    <div class="display-label">
+         @Html.DisplayName("Categoria")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Categoria.Descricao)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descricao)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id=Model.SubCategoriaId }) |
+    @Html.ActionLink("Gerenciar Campos","Index","Campos",new { id=Model.SubCategoriaId },null) |
+    @Html.ActionLink("voltar", "Index")
+</p>

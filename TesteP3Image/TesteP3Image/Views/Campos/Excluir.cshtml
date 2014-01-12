@@ -1,0 +1,29 @@
+﻿@model TesteP3Image.Models.Campos
+
+@{
+    ViewBag.Title = "Categorias - Exclusão";
+}
+
+<h2>Excluir Categoria</h2>
+
+<h3>Você tem certeza que deseja excluir esta categoria?</h3>
+@Html.HiddenFor(model => model.CampoId)
+@Html.HiddenFor(model => model.SubCategoriaId)
+@Html.HiddenFor(model => model.SubCategoria.SubCategoriaId)
+<fieldset>
+    <legend></legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descricao)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("voltar", "Index")
+    </p>
+}

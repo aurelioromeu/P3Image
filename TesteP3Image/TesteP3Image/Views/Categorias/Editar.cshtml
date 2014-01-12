@@ -1,0 +1,31 @@
+﻿@model TesteP3Image.Models.Categorias
+
+@{
+    ViewBag.Title = "Categorias - Edição";
+}
+
+<h2>Alterar Categoria</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.CategoriaId)
+    <fieldset>
+        <legend>Preencha o campo abaixo:</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("voltar", "Index")
+</div>

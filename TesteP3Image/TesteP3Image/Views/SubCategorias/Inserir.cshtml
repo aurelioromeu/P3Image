@@ -1,0 +1,39 @@
+﻿@model TesteP3Image.Models.SubCategorias
+
+@{
+    ViewBag.Title = "Categorias - Inserção";
+}
+
+<h2>Nova Categoria</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Preencha o campo abaixo:</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoriaId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.Categoria.CategoriaId, (IEnumerable<SelectListItem>)ViewBag.ListItems)
+            @Html.ValidationMessageFor(model => model.Categoria.CategoriaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("voltar", "Index")
+</div>

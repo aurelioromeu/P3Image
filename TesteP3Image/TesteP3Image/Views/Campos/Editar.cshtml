@@ -1,0 +1,52 @@
+﻿@model TesteP3Image.Models.Campos
+
+@{
+    ViewBag.Title = "Categorias - Edição";
+}
+
+<h2>Alterar Categoria</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.CampoId)
+    @Html.HiddenFor(model => model.SubCategoriaId)
+    @Html.HiddenFor(model => model.Ordem)
+    <fieldset>
+        <legend>Preencha os campos abaixo:</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tipo)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(o => o.Tipo, Model.TipoItens, "", new { @class = "dropdownlist", style = "width:312px" })
+            @Html.ValidationMessageFor(model => model.Tipo)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Lista)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Lista)
+            @Html.ValidationMessageFor(model => model.Lista)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("voltar", "Index")
+</div>
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@
