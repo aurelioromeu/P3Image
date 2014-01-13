@@ -38,3 +38,4 @@ D:\web\TesteP3Image\TesteP3Image\TesteP3Image\bin\System.Web.WebPages.Deployment
 D:\web\TesteP3Image\TesteP3Image\TesteP3Image\bin\System.Web.WebPages.Razor.xml
 D:\web\TesteP3Image\TesteP3Image\TesteP3Image\obj\Debug\TesteP3Image.dll
 D:\web\TesteP3Image\TesteP3Image\TesteP3Image\obj\Debug\TesteP3Image.pdb
+D:\web\TesteP3Image\TesteP3Image\TesteP3Image\obj\Debug\Admin.csprojResolveAssemblyReference.cache
